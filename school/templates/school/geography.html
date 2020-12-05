@@ -1,0 +1,194 @@
+{%  extends 'school/main.html' %}
+
+{% block content %}
+
+<style type="text/css">
+
+div.ten {
+	background-image: url("../images/r.jpg");
+ 	 background-color: #c2e9fb;
+}
+
+	
+{
+  font-family: sans-serif; /* Change your font family */
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: black;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th{
+  padding: 12px 15px;
+}
+
+.content-table td {
+  padding: 12px 15px;
+  color: black;
+}
+
+.content-table tbody tr {
+  background-color: #ffff;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: white;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: white;
+}
+
+h5 { 
+  font-family: Poiret One;
+  font-size: 1.83em;
+  font-weight: bold;
+  color: black;
+  float: center;
+}
+
+.myButton {
+color: #fff !important;
+text-transform: uppercase;
+text-decoration: none;
+background: #60a3bc;
+padding: 20px;
+border-radius: 50px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+}
+
+.myButton:hover {
+text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+transition: all 0.4s ease 0s;
+}
+
+.myButton2 {
+color: #fff !important;
+text-transform: uppercase;
+text-decoration: none;
+background: #60a3bc;
+padding: 10px;
+border-radius: 30px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+}
+
+.myButton2:hover {
+text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+transition: all 0.4s ease 0s;
+}
+</style>
+
+
+  <div class="ten">
+  <main class="hoc container clear"> 
+
+ <a class="myButton2" href="{% url 'teacher_panel' %}">Back</a>
+
+
+
+<br>
+
+
+<br>
+
+<div class="row">
+
+	<div class="col-md-7">
+		<h5 align="center">Geography Assessments</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="{% url 'create_geography' %}">Add assessments</a>
+			<table class="content-table">
+				<thead>
+				<tr>
+					<th>Student ID</th>
+					<th>First Name</th>
+					<th>Second Name</th>
+					<th>Assessment</th>
+					<th>Mark</th>
+					<th>Grade</th>
+					<th>Assessment Date</th>
+					<th>Comments</th>
+					<th>Update</th>
+					<th>Remove</th>
+				</tr>
+				</thead>
+
+				<tbody>
+
+				{% for i in geography %}
+					<tr>
+						
+						<td>{{i.student_id}}</td>
+						<td>{{i.first_name}}</td>
+						<td>{{i.second_name}}</td>
+						<td>{{i.assessment}}</td>
+						<td>{{i.mark}}</td>
+						<td>{{i.grade}}</td>
+						<td>{{i.assessment_date}}</td>
+						<td>{{i.comments}}</td>
+						<td><a href="{% url 'update_geography' i.id %}">Update</a></td>
+						<td><a href="{% url 'delete_geography' i.id %}">Delete</a></td>
+					</tr>
+
+				{% endfor %}
+
+				</tbody>
+		
+			</table>
+		</div>
+	</div>
+
+<br>
+<div class="row">
+	<div class="col">
+		<div class="card card-body">
+
+			<form method="get">
+				{{myFilter.form}}
+
+		    <button class="btn btn-primary" type="submit">Search</button>
+		  </form>
+
+		</div>
+	</div>
+	
+</div>
+
+</div>
+
+</main>
+</div>
+
+{% endblock %}

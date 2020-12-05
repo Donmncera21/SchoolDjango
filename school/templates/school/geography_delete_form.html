@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	  <div class="wrapper row3">
+  <main class="hoc container clear"> 
+
+
+
+<p>Are you sure you want to delete "{{item}}"</p>
+
+<form action= "{% url 'delete_geography' item.id %}" method="POST">
+
+		{% csrf_token %}
+
+		<a href="{% url 'geography' %}">Cancel</a>
+
+		<input type="submit" name="Confirm">
+</form>
+
+</main>
+</div>
+
+
+
+</body>
+</html>

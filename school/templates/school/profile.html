@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+
+<style type="text/css">
+
+div.ten {
+  background-color: #B8C6DB;
+}
+
+.aligncenter {
+    text-align: center;
+}
+
+img {
+  border-radius: 50%;
+}
+
+{
+  font-family: sans-serif; /* Change your font family */
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.1em;
+  width: 600px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th {
+  padding: 12px 15px;
+}
+.content-table td {
+  padding: 12px 15px;
+  color: black;
+}
+
+.content-table tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tr:last-of-type {
+  border-bottom: 2px solid #B8C6DB;
+}
+
+.content-table tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+h5 { 
+  font-family: Poiret One;
+  font-size: 1.83em;
+  font-weight: bold;
+  color: black;
+  float: center;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.myButton {
+color: #fff !important;
+text-transform: uppercase;
+text-decoration: none;
+background: #60a3bc;
+padding: 20px;
+border-radius: 50px;
+display: inline-block;
+border: none;
+transition: all 0.4s ease 0s;
+}
+
+.myButton:hover {
+text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+transition: all 0.4s ease 0s;
+}
+</style>
+
+
+<body style="background-color:#B8C6DB;">
+
+	<a class="myButton" href="{% url 'class_section' %}">Back</a>
+
+	<h5 align="center">STUDENT PROFILE</h5>
+
+	<p class="aligncenter">
+    <img src="{{student.profile_pic.url}}" alt="centered image" />
+</p>
+
+
+<table class="content-table">
+		<tr>
+			<th>Student ID</th>
+			<td>{{ student.student_id }}</td>
+		</tr>
+		<tr>
+			<th>First Name</th>
+			<td>{{ student.first_name }}</td>
+		</tr>
+		<tr>
+			<th>Second Name</th>
+			<td>{{ student.second_name }}</td>
+		</tr>
+		<tr>
+			<th>D.O.B</th>
+			<td>{{ student.date_of_birth }}</td>
+		</tr>
+		<tr>
+			<th>Nationality</th>
+			<td>{{ student.nationality }}</td>
+		</tr>
+		<tr>
+			<th>Grade</th>
+			<td>{{ student.grade_and_class }}</td>
+		</tr>
+		<tr>
+			<th>Allergies</th>
+			<td>{{ student.allergies }}</td>
+		</tr>
+
+</table>
+
+
+
+
+
+</body>
+</html>
+
+
+
+

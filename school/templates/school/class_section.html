@@ -1,0 +1,157 @@
+{%  extends 'school/user_main.html' %}
+
+{% block content %}
+
+<style type="text/css">
+	
+	div.ten {
+		background-image: url(../images/r.jpg);
+  background-color: #B8C6DB;
+}
+
+{
+  font-family: sans-serif; /* Change your font family */
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th {
+  padding: 12px 15px;
+
+}
+.content-table td {
+  padding: 12px 15px;
+  color: black;
+  align-content: 
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+h5 { 
+  font-family: Poiret One;
+  font-size: 1.83em;
+  font-weight: bold;
+  color: black;
+  float: center;
+}
+</style>
+
+
+<div class="ten">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+
+
+<br>
+
+<h5 align="center">Student Lists</h5>
+
+<table class="content-table">
+	<h5>Section 7B</h5>
+  <thead>
+				<tr>
+					<th>Student ID</th>
+					<th>User</th>
+					<th>First Name</th>
+					<th>Second Name</th>
+					<th>Class</th>
+					<th>View Profile</th>
+					<th>View Grades</th>
+					<th>View Attendence</th>
+				</tr>
+	</thead>
+	<tbody>
+		
+		{% for i in section1 %}
+			<tr>
+				<td>{{i.student_id}}</td>
+				<td>{{i.user}}</td>
+				<td>{{i.first_name}}</td>
+				<td>{{i.second_name}}</td>
+				<td>{{i.grade_and_class}}</td>
+				<td><a class="btn btn-sm btn-info" href="{% url 'profile' i.student_id %}">View</a></td>
+				<td><a class="btn btn-sm btn-info" href="{% url 'student_grades' i.student_id %}">View</a></td>
+				<td><a class="btn btn-sm btn-info" href="{% url 'attendence' i.student_id %}">View</a></td>
+			</tr>
+
+		{% endfor %}
+
+				 
+	</tbody>
+
+		
+			</table>
+
+<br>
+
+		<table class="content-table">
+		<h5>Section 6A</h5>
+		<thead>
+				<tr>
+					<th>Student ID</th>
+					<th>First Name</th>
+					<th>Second Name</th>
+					<th>Class</th>
+					<th>View Profile</th>
+					<th>View Grades</th>
+					<th>View Attendence</th>
+				</tr>
+		</thead>
+		<tbody>
+			{% for i in section2 %}
+				<tr>
+					<td>{{i.student_id}}</td>
+					<td>{{i.first_name}}</td>
+					<td>{{i.second_name}}</td>
+					<td>{{i.grade_and_class}}</td>
+					<td><a class="btn btn-sm btn-info" href="{% url 'profile' i.student_id %}">View</a></td>
+					<td><a class="btn btn-sm btn-info" href="{% url 'student_grades' i.student_id %}">View</a></td>
+					<td><a class="btn btn-sm btn-info" href="{% url 'attendence' i.student_id %}">View</a></td>
+
+				</tr>
+
+			{% endfor %}
+
+			 
+	
+		</tbody>
+
+
+			</table>
+
+	<div class="clear"></div>
+  </main>
+</div>
+
+{% endblock %}

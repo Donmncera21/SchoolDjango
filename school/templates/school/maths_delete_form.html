@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<p>Are you sure you want to delete "{{item}}"</p>
+
+<form action= "{% url 'delete_geography' item.id %}" method="POST">
+
+		{% csrf_token %}
+
+		<a href="{% url 'geography' %}">Cancel</a>
+
+		<input type="submit" name="Confirm">
+</form>
+
+
+</body>
+</html>
+
+
+

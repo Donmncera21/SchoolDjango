@@ -1,0 +1,253 @@
+{%  extends 'school/user_main.html' %}
+
+{% block content %}
+
+<style type="text/css">
+	
+	div.ten {
+		background-image: url(../images/r.jpg);
+ 		 background-color: #B8C6DB;
+}
+
+{
+  font-family: sans-serif; /* Change your font family */
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th {
+  padding: 12px 15px;
+
+}
+.content-table td {
+  padding: 12px 15px;
+  color: black;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+h5 { 
+  font-family: Poiret One;
+  font-size: 1.83em;
+  font-weight: bold;
+  color: black;
+  float: center;
+}
+</style>
+
+  <div class="ten">
+  <main class="hoc container clear"> 
+
+
+<div class="row">
+	<div class="col-md">
+		<h5 align="center">Geography Assessments</h5>
+		<div class="card card-body">
+			<table class="content-table">
+				<tr>
+					<th>Student ID</th>
+					<th>First Name</th>
+					<th>Second Name</th>
+					<th>Assessment</th>
+					<th>Mark</th>
+					<th>Grade</th>
+					<th>Assessment Date</th>
+					<th>Comments</th>
+				</tr>
+
+				{% for i in geo %}
+
+				<tr>
+					<td>{{i.student_id}}</td>
+					<td>{{i.first_name}}</td>
+					<td>{{i.second_name}}</td>
+					<td>{{i.assessment}}</td>
+					<td>{{i.mark}}</td>
+					<td>{{i.grade}}</td>
+					<td>{{i.assessment_date}}</td>
+					<td>{{i.comments}}</td>
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-md">
+		<h5 align="center">Maths Assessments</h5>
+		<div class="card card-body">
+			<table class="content-table">
+				<tr>
+					<th>Student ID</th>
+					<th>First Name</th>
+					<th>Second Name</th>
+					<th>Assessment</th>
+					<th>Mark</th>
+					<th>Grade</th>
+					<th>Assessment Date</th>
+					<th>Comments</th>
+				</tr>
+
+				{% for i in maths %}
+
+				<tr>
+					<td>{{i.student_id}}</td>
+					<td>{{i.first_name}}</td>
+					<td>{{i.second_name}}</td>
+					<td>{{i.assessment}}</td>
+					<td>{{i.mark}}</td>
+					<td>{{i.grade}}</td>
+					<td>{{i.assessment_date}}</td>
+					<td>{{i.comments}}</td>
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-md">
+		<h5 align="center">Science Assessments</h5>
+		<div class="card card-body">
+			<table class="content-table">
+				<tr>
+					<th>Student ID</th>
+					<th>First Name</th>
+					<th>Second Name</th>
+					<th>Assessment</th>
+					<th>Mark</th>
+					<th>Grade</th>
+					<th>Assessment Date</th>
+					<th>Comments</th>
+				</tr>
+
+				{% for i in sciences %}
+
+				<tr>
+					<td>{{i.student_id}}</td>
+					<td>{{i.first_name}}</td>
+					<td>{{i.second_name}}</td>
+					<td>{{i.assessment}}</td>
+					<td>{{i.mark}}</td>
+					<td>{{i.grade}}</td>
+					<td>{{i.assessment_date}}</td>
+					<td>{{i.comments}}</td>
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md">
+		<h5 align="center">Religious Studies Assessments</h5>
+		<div class="card card-body">
+			<table class="content-table">
+				<tr>
+					<th>Student ID</th>
+					<th>First Name</th>
+					<th>Second Name</th>
+					<th>Assessment</th>
+					<th>Mark</th>
+					<th>Grade</th>
+					<th>Assessment Date</th>
+					<th>Comments</th>
+				</tr>
+
+				{% for i in religious_studies %}
+
+				<tr>
+					<td>{{i.student_id}}</td>
+					<td>{{i.first_name}}</td>
+					<td>{{i.second_name}}</td>
+					<td>{{i.assessment}}</td>
+					<td>{{i.mark}}</td>
+					<td>{{i.grade}}</td>
+					<td>{{i.assessment_date}}</td>
+					<td>{{i.comments}}</td>
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md">
+		<h5 align="center">Art Assessments</h5>
+		<div class="card card-body">
+			<table class="content-table">
+				<tr>
+					<th>Student ID</th>
+					<th>First Name</th>
+					<th>Second Name</th>
+					<th>Assessment</th>
+					<th>Mark</th>
+					<th>Grade</th>
+					<th>Assessment Date</th>
+					<th>Comments</th>
+				</tr>
+
+				{% for i in arts %}
+
+				<tr>
+					<td>{{i.student_id}}</td>
+					<td>{{i.first_name}}</td>
+					<td>{{i.second_name}}</td>
+					<td>{{i.assessment}}</td>
+					<td>{{i.mark}}</td>
+					<td>{{i.grade}}</td>
+					<td>{{i.assessment_date}}</td>
+					<td>{{i.comments}}</td>
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+
+</main>
+</div>
+
+
+{% endblock %}
